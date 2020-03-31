@@ -13,6 +13,6 @@ public class MathUtilsTest {
         int expected = 2;
         int actual = mathUtils.add(1, 1);
 
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, "The add method should add 2 numbers");
     }
 }
