@@ -83,6 +83,6 @@ public class MathUtilsTest {
     @Disabled
     @DisplayName("Fail Test")
     public void testDisabled() {
-        fail("This test is disabled.");
+        fail("This test is disabled."); // this test should fail
     }
 }
