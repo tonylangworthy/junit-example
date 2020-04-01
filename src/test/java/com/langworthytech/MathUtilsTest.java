@@ -34,6 +34,7 @@ public class MathUtilsTest {
 
     @Nested
     @DisplayName("Add Test")
+    @Tag("Math")
     class AddTest {
 
         @Test
@@ -53,6 +54,7 @@ public class MathUtilsTest {
 
     @Test
     @DisplayName("Multiply Test")
+    @Tag("Math")
     public void testMultiply() {
         assertAll(
             () -> assertEquals(4, mathUtils.multiply(2, 2)),
@@ -65,6 +67,7 @@ public class MathUtilsTest {
 
     @Test
     @DisplayName("Divide Test")
+    @Tag("Math")
     public void testDivide() {
         boolean isServerUp = true;
         assumeTrue(isServerUp); //Will not run if server is down
@@ -75,6 +78,7 @@ public class MathUtilsTest {
 
     @Test
     @DisplayName("Compute Circle Radius Test")
+    @Tag("Circle")
     public void testComputeCircleRadius() {
         assertEquals(314.1592653589793,
                 mathUtils.computeCircleArea(10), "Should return right circle area");
