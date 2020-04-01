@@ -31,13 +31,23 @@ public class MathUtilsTest {
         System.out.println("Cleaning up...");
     }
 
-    @Test
+    @Nested
     @DisplayName("Add Test")
-    public void testAdd() {
-        int expected = 2;
-        int actual = mathUtils.add(1, 1);
+    class AddTest {
 
-        assertEquals(expected, actual, "Method should add 2 integers");
+        @Test
+        @DisplayName("Add Positive Test")
+        public void testAddPositive() {
+            int expected = 2;
+            int actual = mathUtils.add(1, 1);
+            assertEquals(expected, actual, "Method should add 2 integers");
+        }
+
+        @Test
+        @DisplayName("Add Negative Test")
+        public void testAddNegative() {
+            assertEquals(-2, mathUtils.add(-1, -1), "Should return the right sum");
+        }
     }
 
     @Test
