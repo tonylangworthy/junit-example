@@ -2,16 +2,30 @@ package com.langworthytech;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class MathUtilsTest {
 
     MathUtils mathUtils;
 
+    @BeforeAll
+    public static void beforeAllInit() {
+        System.out.println("This needs to run before all");
+    }
+
+    @AfterAll
+    public static void afterAllInit() {
+        System.out.println("This needs to run after all");
+    }
+
     @BeforeEach
     public void init() {
         this.mathUtils = new MathUtils();
+    }
+
+    @AfterEach
+    public void cleanup() {
+        System.out.println("Cleaning up...");
     }
 
     @Test
