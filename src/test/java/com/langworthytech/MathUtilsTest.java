@@ -10,6 +10,8 @@ import org.junit.jupiter.api.condition.OS;
 public class MathUtilsTest {
 
     MathUtils mathUtils;
+    TestInfo testInfo;
+    TestReporter testReporter;
 
     @BeforeAll
     public static void beforeAllInit() {
@@ -22,9 +24,11 @@ public class MathUtilsTest {
     }
 
     @BeforeEach
-    public void init() {
+    public void init(TestInfo testInfo, TestReporter testReporter) {
         System.out.println("Initiating objects...");
         this.mathUtils = new MathUtils();
+        this.testInfo = testInfo;
+        this.testReporter = testReporter;
     }
 
     @AfterEach
@@ -56,6 +60,7 @@ public class MathUtilsTest {
     @DisplayName("Multiply Test")
     @Tag("Math")
     public void testMultiply() {
+        testReporter.publishEntry("Running " + testInfo.getDisplayName() + " with tag " + testInfo.getTags());
         assertAll(
             () -> assertEquals(4, mathUtils.multiply(2, 2)),
             () -> assertEquals(16, mathUtils.multiply(4, 4)),
