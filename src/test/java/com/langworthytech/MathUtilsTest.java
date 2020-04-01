@@ -23,6 +23,7 @@ public class MathUtilsTest {
 
     @BeforeEach
     public void init() {
+        System.out.println("Initiating objects...");
         this.mathUtils = new MathUtils();
     }
 
@@ -84,5 +85,11 @@ public class MathUtilsTest {
     @DisplayName("Fail Test")
     public void testDisabled() {
         fail("This test is disabled."); // this test should fail
+    }
+
+    @RepeatedTest(3)
+    public void repeatableTest(RepetitionInfo repetitionInfo) {
+        System.out.println("Repetition " + repetitionInfo.getCurrentRepetition());
+
     }
 }
